@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using SuperStore.DAL.Repositories;
 
 namespace SuperStore.DAL
 {
@@ -12,6 +13,7 @@ namespace SuperStore.DAL
     {
         public static IServiceCollection ConfigureDalDependencies(this IServiceCollection services)
         {
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             return services;
         }

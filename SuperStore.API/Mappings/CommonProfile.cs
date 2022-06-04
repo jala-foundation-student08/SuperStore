@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using SuperStore.API.Models;
+using SuperStore.Models.Entities;
 
 namespace SuperStore.API.Mappings
 {
@@ -6,7 +8,10 @@ namespace SuperStore.API.Mappings
     {
         public CommonProfile()
         {
-
+            CreateMap<Product, ProductDto>();
+            CreateMap<ProductDto, Product>();
+            CreateMap<Product, UpsertProductDto>();
+            CreateMap<UpsertProductDto, Product>();
         }
     }
 }
